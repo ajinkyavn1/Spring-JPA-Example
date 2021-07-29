@@ -1,6 +1,7 @@
 package com.springjpa.Repo;
 
 import com.springjpa.Entity.Student;
+import org.hibernate.sql.Select;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -28,4 +29,11 @@ public interface StudentRepo  extends JpaRepository<Student,Long> {
             nativeQuery = true
     )
     Student getStudentByEmailIdNativeNamedParams(@Param("emailId") String Str);
+
+    @Query(
+            value = "select  * from jpa_student order  by student_id  desc ",
+            nativeQuery = true
+    )
+    List<Student> getStudentsDecendingOrder();
+
 }
