@@ -3,6 +3,7 @@ package com.springjpa.Repo;
 import com.springjpa.Entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -18,5 +19,8 @@ public interface StudentRepo  extends JpaRepository<Student,Long> {
     )
     Student getStudentByEmailId(String email);
     //JPL Query
+    @Query("select  s.fristName from Student  s where  s.emailId=?1")
+    String getStudentFristNameByEmailId(String email);
+
 
 }
