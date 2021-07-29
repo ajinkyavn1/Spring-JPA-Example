@@ -69,4 +69,9 @@ class StudentRepoTest {
         Student S=studentRepo.getStudentByEmailIdNativeNamedParams("adsada@gmail.com");
         System.out.println("Student Is = "+S);
     }
+    @Test
+    public void getStudentsDecendingOrder(){
+        List<Student> s=studentRepo.getStudentsDecendingOrder();
+        System.out.printf("Students = "+s);
+    }
 }
