@@ -74,5 +74,9 @@ class StudentRepoTest {
         List<Student> s=studentRepo.getStudentsDecendingOrder();
         System.out.printf("Students = "+s);
     }
+    @Test
+    public  void Update(){
+        studentRepo.UpdateFistNameByEmail("Awdsadsadsd","adsada@gmail.com");
+    }
 
 }
