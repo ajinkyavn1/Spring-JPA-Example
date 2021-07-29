@@ -41,4 +41,14 @@ class StudentRepoTest {
                 .build();
         studentRepo.save(student);
     }
+    @Test
+    public void PrintStudentByFristName(){
+        List<Student>list=studentRepo.findByFristName("Ajink");
+        System.out.println("Students Are = "+list);
+    }
+    @Test
+    public void PrintStudentByNameContaining(){
+        List<Student>list=studentRepo.findByFristNameContaining("Aj");
+        System.out.println("Students Are = "+list);
+    }
 }
