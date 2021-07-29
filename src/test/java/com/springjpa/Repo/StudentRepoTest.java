@@ -51,4 +51,12 @@ class StudentRepoTest {
         List<Student>list=studentRepo.findByFristNameContaining("Aj");
         System.out.println("Students Are = "+list);
     }
+
+
+
+    @Test
+    public  void  getStudentByEmailId(){
+        Student s=studentRepo.getStudentByEmailId("adsada@gmail.com");
+        System.out.println("Student = "+s);
+    }
 }
