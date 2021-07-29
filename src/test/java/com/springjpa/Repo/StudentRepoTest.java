@@ -64,4 +64,9 @@ class StudentRepoTest {
         String s=studentRepo.getStudentFristNameByEmailId("adsada@gmail.com");
         System.out.println("Student = "+s);
     }
+    @Test
+    public void getStudentBYEmailParamQuery(){
+        Student S=studentRepo.getStudentByEmailIdNativeNamedParams("adsada@gmail.com");
+        System.out.println("Student Is = "+S);
+    }
 }
