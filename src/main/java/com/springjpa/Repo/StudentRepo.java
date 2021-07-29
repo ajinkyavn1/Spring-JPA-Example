@@ -3,10 +3,12 @@ package com.springjpa.Repo;
 import com.springjpa.Entity.Student;
 import org.hibernate.sql.Select;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
@@ -35,5 +37,13 @@ public interface StudentRepo  extends JpaRepository<Student,Long> {
             nativeQuery = true
     )
     List<Student> getStudentsDecendingOrder();
+
+    @Modifying
+    @Transactional
+    @Query(
+            value = "update jpa_student set frist_name =?1  where email=?2 ;",
+            nativeQuery = true
+    )
+    int UpdateFistNameByEmail(String name,String email);
 
 }
