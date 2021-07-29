@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface StudentRepo  extends JpaRepository<Student,Long> {
     public List<Student> findByFristName(String fristName);
+    public  List<Student> findByFristNameContaining(String str);
 }
