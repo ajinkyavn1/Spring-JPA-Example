@@ -1,5 +1,6 @@
 package com.springjpa.Repo;
 
+import com.springjpa.Entity.Gurdian;
 import com.springjpa.Entity.Student;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +19,6 @@ class StudentRepoTest {
                 .emailId("ajinnkyha@gmail.com")
                 .fristName("Ajinkya")
                 .lastName("Narkhede")
-                .gurdianMobail("9881211594")
-                .gurdianName("Aj")
-                .GurdianEmail("ajhasgjh@gmail.com")
                 .build();
         studentRepo.save(student);
     }
@@ -28,5 +26,19 @@ class StudentRepoTest {
     public  void  printAllStudent(){
         List<Student> studentList= studentRepo.findAll();
         System.out.println("Student List = "+studentList);
+    }
+    @Test
+    public  void saveStudentWithGurdian(){
+        Gurdian gurdian=Gurdian.builder()
+                .mobail("9881211594")
+                .name("Aj")
+                .email("ajhasgjfh@gmail.com").build();
+        Student student=Student.builder()
+                .fristName("Ajink")
+                .lastName("Narkhe")
+                .emailId("adsada@gmail.com")
+                .gurdian(gurdian)
+                .build();
+        studentRepo.save(student);
     }
 }
