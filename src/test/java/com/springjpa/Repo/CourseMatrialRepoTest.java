@@ -29,7 +29,8 @@ class CourseMatrialRepoTest {
     }
     @Test
     public void printAll(){
-        List<CourceMaterial> courceMaterialList;
+        List<CourceMaterial> courceMaterialList=
         courseMatrialRepo.findAll();
+        System.out.println("courcse Material "+courceMaterialList);
     }
 }

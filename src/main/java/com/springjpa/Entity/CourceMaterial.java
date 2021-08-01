@@ -1,9 +1,6 @@
 package com.springjpa.Entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -12,6 +9,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@ToString(exclude = "course")
 public class CourceMaterial {
     @Id
     @SequenceGenerator(name = "course_Material_Sequence",allocationSize = 1,sequenceName = "course_Material_Sequence")
