@@ -24,7 +24,7 @@ public class CourceMaterial {
     )
     @JoinColumn(
             name = "Course_id",
-            referencedColumnName = "CourseId",
+            referencedColumnName = "CourseId"
     )
     private Courses course;
 }
